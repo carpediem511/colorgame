@@ -1,0 +1,53 @@
+* {
+  box-sizing: border-box; 
+}
+
+body {
+  background-color: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	max-width: 400px;
+}
+
+.square {
+	width: 16px;
+	height: 16px;
+	background: #1d1d1d;
+	margin: 2px;
+	box-shadow: 0 0 2px #000;
+	transition: background-color 0.5s, transform 0.2s, box-shadow 0.5s;
+}
+
+.square:hover {
+	transform: scale(1.1);
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.square {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes changeColor {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+.square:hover {
+	animation: changeColor 2s infinite linear;
+  transition-duration: 0s;
+}
